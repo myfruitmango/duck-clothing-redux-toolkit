@@ -2,12 +2,12 @@ import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { selectIsCartOpen } from "../../store/cart/cart.selector";
-import { selectCurrentUser } from "../../store/user/user.selector";
-import { signOutUser } from "../../utils/firebase/firebase.utils";
+import { selectIsCartOpen } from "../../store/cart/selector";
+import { selectCurrentUser } from "../../store/user/selector";
+import { signOutUser } from "../../utils/firebase/firebase";
 
-import CartIcon from "../../components/cart-icon/cart-icon.componet.jsx";
-import CartDropdown from "../../components/cart-dropdown/styles.jsx";
+import CartIcon from "../../components/cart-icon";
+import CartDropdown from "../../components/cart-dropdown";
 
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
 import {

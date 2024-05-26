@@ -2,13 +2,13 @@ import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
-import { setCategories } from "../../store/categories/category.reducer";
+import { getCategoriesAndDocuments } from "../../utils/firebase/firebase";
+import { setCategories } from "../../store/categories/reducer";
 
 import CategoriesPreview from "../categories-preview";
 import Category from "../category";
 
-import "./shop.styles.scss";
+import "./styles.scss";
 
 const Shop = () => {
   const dispatch = useDispatch();

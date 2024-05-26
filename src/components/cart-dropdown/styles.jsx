@@ -1,35 +1,37 @@
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
-import { selectCartItems } from "../../store/cart/cart.selector";
-
-import Button from "../button/button.component";
-import CartItem from "../cart-item";
 import {
-  EmptyMessage,
-  CartDropdownContainer,
-  CartItems,
-} from "./cart-dropdown.styles";
+  BaseButton,
+  GoogleSignInButton,
+  InvertedButton,
+} from "../button/styles";
 
-const CartDropdown = () => {
-  const cartItems = useSelector(selectCartItems);
-  const navigate = useNavigate();
+export const CartDropdownContainer = styled.div`
+  position: absolute;
+  width: 270px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: white;
+  top: 90px;
+  right: 40px;
+  z-index: 5;
 
-  const goToCheckoutHandler = () => {
-    navigate("/checkout");
-  };
+  ${BaseButton}, ${GoogleSignInButton}, ${InvertedButton} {
+    margin-top: auto;
+  }
+`;
 
-  return (
-    <CartDropdownContainer>
-      <CartItems>
-        {cartItems.length ? (
-          cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
-        ) : (
-          <EmptyMessage>Your cart is empty</EmptyMessage>
-        )}
-      </CartItems>
-      <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
-    </CartDropdownContainer>
-  );
-};
-export default CartDropdown;
+export const EmptyMessage = styled.span`
+  font-size: 18px;
+  margin: 50px auto;
+`;
+
+export const CartItems = styled.div`
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+`;

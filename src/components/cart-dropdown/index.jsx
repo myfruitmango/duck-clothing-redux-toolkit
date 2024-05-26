@@ -1,37 +1,35 @@
-import styled from "styled-components";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
+import { selectCartItems } from "../../store/cart/selector";
+
+import Button from "../button";
+import CartItem from "../cart-item";
 import {
-  BaseButton,
-  GoogleSignInButton,
-  InvertedButton,
-} from "../button/styles";
+  EmptyMessage,
+  CartDropdownContainer,
+  CartItems,
+} from "./styles";
 
-export const CartDropdownContainer = styled.div`
-  position: absolute;
-  width: 270px;
-  height: 340px;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border: 1px solid black;
-  background-color: white;
-  top: 90px;
-  right: 40px;
-  z-index: 5;
+const CartDropdown = () => {
+  const cartItems = useSelector(selectCartItems);
+  const navigate = useNavigate();
 
-  ${BaseButton}, ${GoogleSignInButton}, ${InvertedButton} {
-    margin-top: auto;
-  }
-`;
+  const goToCheckoutHandler = () => {
+    navigate("/checkout");
+  };
 
-export const EmptyMessage = styled.span`
-  font-size: 18px;
-  margin: 50px auto;
-`;
-
-export const CartItems = styled.div`
-  height: 240px;
-  display: flex;
-  flex-direction: column;
-  overflow: scroll;
-`;
+  return (
+    <CartDropdownContainer>
+      <CartItems>
+        {cartItems.length ? (
+          cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
+        ) : (
+          <EmptyMessage>Your cart is empty</EmptyMessage>
+        )}
+      </CartItems>
+      <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
+    </CartDropdownContainer>
+  );
+};
+export default CartDropdown;
