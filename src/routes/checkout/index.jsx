@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import {
   selectCartItems,
   selectCartTotal,
-} from "../../store/cart/cart.selector";
+} from "../../store/cart/selector";
 
-import "./checkout.styles.scss";
+import "./styles.scss";
 import CheckoutItem from "../../components/checkout-item";
 
 const Checkout = () => {

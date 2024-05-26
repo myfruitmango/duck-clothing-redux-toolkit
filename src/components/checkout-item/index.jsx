@@ -4,7 +4,7 @@ import {
   addItemToCart,
   clearItemFromCart,
   removeItemFromCart,
-} from "../../store/cart/cart.reducer";
+} from "../../store/cart/reducer";
 
 import {
   Arrow,

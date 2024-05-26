@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 import {
-  createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
-} from "../../utils/firebase/firebase.utils";
+  createAuthUserWithEmailAndPassword,
+} from "../../utils/firebase/firebase";
 
 import FormInput from "../form-input";
 import Button from "../button";
