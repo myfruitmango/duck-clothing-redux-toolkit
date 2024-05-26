@@ -1,13 +1,19 @@
+// ** React Imports
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 
+// ** Store Imports
 import { store } from "./store";
 
+// ** App Imports
 import App from "./App";
+
+// ** Styles SCSS Imports
 import "./index.scss";
 
+// ** Other Imports
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -1,32 +1,41 @@
+// ** React Imports
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
+// ** Utils Imports
 import {
   createUserDocumentFromAuth,
   onAuthStateChangedListener,
-} from "./utils/firebase/firebase.utils";
-import { setCurrentUser } from "./store/user/user.action";
+} from "./utils/firebase/firebase";
 
-import Navigation from "./routes/navigation/navigation.component";
-import Authentication from "./routes/authentication/authentication.component";
-import Home from "./routes/home/home.component";
-import Shop from "./routes/shop/shop.component";
-import Checkout from "./routes/checkout/checkout.component";
+// ** Store Imports
+import { setCurrentUser } from "./store/user/reducer";
+
+// ** Components Imports
+import Navigation from "./routes/navigation";
+
+// ** Routes Imports
+import Home from "./routes/home";
+import Shop from "./routes/shop";
+import Checkout from "./routes/checkout";
+import Authentication from "./routes/authentication";
 
 const App = () => {
   const dispatch = useDispatch();
 
+  // ! effect
   useEffect(() => {
     const unsubcribe = onAuthStateChangedListener((user) => {
       if (user) {
         createUserDocumentFromAuth(user);
       }
-      dispatch(setCurrentUser(user));
+      const pickedUser = user && (({ accessToken, email }) => ({ accessToken, email }))(user)
+      dispatch(setCurrentUser(pickedUser));
     });
 
     return unsubcribe;
-  }, []);
+  }, [dispatch]);
 
   return (
     <Routes>

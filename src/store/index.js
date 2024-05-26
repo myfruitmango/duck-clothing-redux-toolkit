@@ -1,24 +1,18 @@
-import { compose, createStore, applyMiddleware } from "redux";
-// import logger from "redux-logger";
+// ** @reduxjs/toolkit Imports
+import { configureStore } from "@reduxjs/toolkit";
 
-import { rootReducer } from "./reducer";
+// ** Redux Logger Imports
+import logger from 'redux-logger';
 
-const loggerMiddleware = (store) => (next) => (action) => {
-  if (!action.type) {
-    return next(action);
-  }
+// ** Root Reducer Imports
+import { rootReducer } from './reducer';
 
-  console.log("type: ", action.type);
-  console.log("payload: ", action.payload);
-  console.log("currentState: ", store.getState());
+const middleWares = [process.env.NODE_ENV === 'development' && logger].filter(
+  Boolean
+);
 
-  next(action);
-
-  console.log("next state:", store.getState());
-};
-// root-reducer
-const middleWares = [loggerMiddleware]; // bisa menggunakan
-
-const composedEnhancers = compose(applyMiddleware(...middleWares));
-
-export const store = createStore(rootReducer, undefined, composedEnhancers);
+export const store = configureStore({
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(middleWares), // { serializableCheck: false }
+});
