@@ -1,24 +1,32 @@
-import { Fragment } from "react";
+// ** React Imports
+import React, { Fragment } from "react";
 import { Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { selectIsCartOpen } from "../../store/cart/selector";
-import { selectCurrentUser } from "../../store/user/selector";
+// ** Utils Imports
 import { signOutUser } from "../../utils/firebase/firebase";
 
+// ** Store Imports
+import { selectIsCartOpen } from "../../store/cart/selector";
+import { selectCurrentUser } from "../../store/user/selector";
+
+// ** Components Imports
 import CartIcon from "../../components/cart-icon";
 import CartDropdown from "../../components/cart-dropdown";
 
-import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
+// ** Styles Imports
 import {
-  NavigationContainer,
-  NavLinks,
   NavLink,
+  NavLinks,
   LogoContainer,
+  NavigationContainer,
 } from "./styles.jsx";
 
+// ** Assets Imports
+import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
+
 const Navigation = () => {
-  // const currentUser = useSelector((state) => state.user.currentUser);
+  // ! selector
   const currentUser = useSelector(selectCurrentUser);
   const isCartOpen = useSelector(selectIsCartOpen);
 

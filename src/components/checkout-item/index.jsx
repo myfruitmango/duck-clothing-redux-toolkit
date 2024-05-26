@@ -1,30 +1,35 @@
+// ** React Imports
+import React from "react";
 import { useDispatch } from "react-redux";
 
+// ** Store Imports
 import {
   addItemToCart,
   clearItemFromCart,
   removeItemFromCart,
 } from "../../store/cart/reducer";
 
+// ** Styles Imports
 import {
   Arrow,
+  Value,
   BaseSpan,
-  CheckoutItemContainer,
-  ImageContainer,
   Quantity,
   RemoveButton,
-  Value,
+  ImageContainer,
+  CheckoutItemContainer,
 } from "./styles";
 
 const CheckoutItem = ({ cartItem }) => {
-  const { name, imageUrl, price, quantity } = cartItem;
   const dispatch = useDispatch();
 
+  // ! props
+  const { name, imageUrl, price, quantity } = cartItem;
+
+  // ! handler
   const addItemHandler = () => dispatch(addItemToCart(cartItem));
-  const removeItemHandler = () =>
-    dispatch(removeItemFromCart(cartItem));
-  const clearItemHandler = () =>
-    dispatch(clearItemFromCart(cartItem));
+  const removeItemHandler = () => dispatch(removeItemFromCart(cartItem));
+  const clearItemHandler = () => dispatch(clearItemFromCart(cartItem));
 
   return (
     <CheckoutItemContainer>

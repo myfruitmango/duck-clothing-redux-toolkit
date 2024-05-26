@@ -1,9 +1,11 @@
+// ** Styled Imports
 import styled from "styled-components";
 
+// ** Styles (Button) Imports
 import {
   BaseButton,
-  GoogleSignInButton,
   InvertedButton,
+  GoogleSignInButton,
 } from "../button/styles";
 
 export const CartDropdownContainer = styled.div`

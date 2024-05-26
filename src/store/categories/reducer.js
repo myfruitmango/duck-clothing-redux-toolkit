@@ -1,3 +1,4 @@
+// ** @reduxjs/toolkit Imports
 import { createSlice } from "@reduxjs/toolkit";
 
 export const CATEGORIES_INITIAL_STATE = {

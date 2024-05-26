@@ -1,20 +1,29 @@
+// ** React Imports
+import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+// ** Store Imports
 import { selectCartItems } from "../../store/cart/selector";
 
+// ** Components Imports
 import Button from "../button";
 import CartItem from "../cart-item";
+
+// ** Styles Imports
 import {
+  CartItems,
   EmptyMessage,
   CartDropdownContainer,
-  CartItems,
 } from "./styles";
 
 const CartDropdown = () => {
-  const cartItems = useSelector(selectCartItems);
   const navigate = useNavigate();
 
+  // ! selector
+  const cartItems = useSelector(selectCartItems);
+
+  // ! Handler
   const goToCheckoutHandler = () => {
     navigate("/checkout");
   };

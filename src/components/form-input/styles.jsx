@@ -1,5 +1,7 @@
+// ** Styled Imports
 import styled, { css } from "styled-components";
 
+// ! general color
 const subColor = "grey";
 const mainColor = "black";
 
