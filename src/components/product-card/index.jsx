@@ -2,13 +2,13 @@ import { useDispatch } from "react-redux";
 
 import { addItemToCart } from "../../store/cart/cart.reducer";
 
-import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
+import Button, { BUTTON_TYPE_CLASSES } from "../button";
 import {
   Footer,
   Name,
   Price,
   ProductCardContainer,
-} from "./product-card.styles";
+} from "./styles";
 
 const ProductCard = ({ product }) => {
   const { name, price, imageUrl } = product;

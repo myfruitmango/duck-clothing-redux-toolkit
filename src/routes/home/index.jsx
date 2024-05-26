@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 
-import Directory from "../../components/directory/directory.component";
+import Directory from "../../components/directory";
 
 const Home = () => {
   return (

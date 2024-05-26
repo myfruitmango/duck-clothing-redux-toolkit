@@ -6,7 +6,7 @@ import {
 } from "../../store/cart/cart.selector";
 
 import "./checkout.styles.scss";
-import CheckoutItem from "../../components/checkout-item/checkout-item.component";
+import CheckoutItem from "../../components/checkout-item";
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
