@@ -1,12 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
-
-import { selectCartItems } from "../../store/cart/cart.selector";
+import { useDispatch } from "react-redux";
 
 import {
   addItemToCart,
   clearItemFromCart,
   removeItemFromCart,
-} from "../../store/cart/cart.action";
+} from "../../store/cart/cart.reducer";
 
 import {
   Arrow,
@@ -21,13 +19,12 @@ import {
 const CheckoutItem = ({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
   const dispatch = useDispatch();
-  const cartItems = useSelector(selectCartItems);
 
-  const addItemHandler = () => dispatch(addItemToCart(cartItems, cartItem));
+  const addItemHandler = () => dispatch(addItemToCart(cartItem));
   const removeItemHandler = () =>
-    dispatch(removeItemFromCart(cartItems, cartItem));
+    dispatch(removeItemFromCart(cartItem));
   const clearItemHandler = () =>
-    dispatch(clearItemFromCart(cartItems, cartItem));
+    dispatch(clearItemFromCart(cartItem));
 
   return (
     <CheckoutItemContainer>
