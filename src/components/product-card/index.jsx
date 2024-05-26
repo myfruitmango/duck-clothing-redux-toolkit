@@ -1,19 +1,28 @@
+// ** React Imports
+import React from "react";
 import { useDispatch } from "react-redux";
 
+// ** Store Imports
 import { addItemToCart } from "../../store/cart/reducer";
 
+// ** Components Imports
 import Button, { BUTTON_TYPE_CLASSES } from "../button";
+
+// ** Styles Imports
 import {
-  Footer,
   Name,
   Price,
+  Footer,
   ProductCardContainer,
 } from "./styles";
 
 const ProductCard = ({ product }) => {
-  const { name, price, imageUrl } = product;
   const dispatch = useDispatch();
 
+  // ! props
+  const { name, price, imageUrl } = product;
+
+  // ! dispatch
   const AddProductToCart = () => dispatch(addItemToCart(product));
 
   return (

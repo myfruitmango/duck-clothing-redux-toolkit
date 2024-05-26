@@ -1,14 +1,20 @@
-import { useState } from "react";
+// ** React Imports
+import React, { useState } from "react";
 
+// ** Utils Imports
 import {
   createUserDocumentFromAuth,
   createAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase";
 
-import FormInput from "../form-input";
+// ** Components Imports
 import Button from "../button";
+import FormInput from "../form-input";
+
+// ** Styles Imports
 import { SignUpContainer } from "./styles";
 
+// ! default fields
 const defaultFormFields = {
   displayName: "",
   email: "",
@@ -17,21 +23,23 @@ const defaultFormFields = {
 };
 
 const SignUpForm = () => {
+  // ! state
   const [formFields, setFormFields] = useState(defaultFormFields);
+
+  // ! form
   const { displayName, email, password, confirmPassword } = formFields;
 
+  // ! handler
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     if (password !== confirmPassword) {
       alert("passwords do not match");
       return;
     }
-
     try {
       const { user } = await createAuthUserWithEmailAndPassword(
         email,
@@ -53,6 +61,7 @@ const SignUpForm = () => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
   };
+
   return (
     <SignUpContainer>
       <h2>Don't have an account?</h2>

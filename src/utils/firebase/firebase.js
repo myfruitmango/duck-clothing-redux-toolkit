@@ -1,3 +1,4 @@
+// ** Firebase Importse
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
@@ -29,7 +30,7 @@ const firebaseConfig = {
   appId: "1:1097877695982:web:9b04117bea69db8d1a72ff",
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
 

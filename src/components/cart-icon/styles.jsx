@@ -1,5 +1,7 @@
+// ** Styled Imports
 import styled from "styled-components";
 
+// ** Assets Imports
 import { ReactComponent as ShoppingSvg } from "../../assets/shopping-bag.svg";
 
 export const ShoppingIcon = styled(ShoppingSvg)`

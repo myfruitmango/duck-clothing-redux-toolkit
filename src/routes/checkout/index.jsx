@@ -1,14 +1,20 @@
-import { useSelector } from "react-redux";
+// ** React Imports
+import React, { useSelector } from "react-redux";
 
+// ** Store Imports
 import {
   selectCartItems,
   selectCartTotal,
 } from "../../store/cart/selector";
 
-import "./styles.scss";
+// ** Components Imports
 import CheckoutItem from "../../components/checkout-item";
 
+// ** Styles SCSS Imports
+import "./styles.scss";
+
 const Checkout = () => {
+  // ! selector
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
 

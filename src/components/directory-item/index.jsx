@@ -1,15 +1,21 @@
+// ** React Imports
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
+// ** Styles Imports
 import {
-  BackgroundImage,
   Body,
+  BackgroundImage,
   DirectoryItemContainer,
 } from "./styles";
 
 const DirectoryItem = ({ category }) => {
-  const { imageUrl, title, route } = category;
   const navigate = useNavigate();
 
+  // ! props
+  const { imageUrl, title, route } = category;
+
+  // ! handler
   const onNavigateHandler = () => navigate(route);
 
   return (

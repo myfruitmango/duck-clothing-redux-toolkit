@@ -1,7 +1,13 @@
-import { DirectoryContainer } from "./styles";
+// ** React Imports
+import React from "react";
 
+// ** Components Imports
 import DirectoryItem from "../directory-item";
 
+// ** Styles Imports
+import { DirectoryContainer } from "./styles";
+
+// ! dummy data
 const categories = [
   {
     id: 1,

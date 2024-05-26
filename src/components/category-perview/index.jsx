@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom";
+// ** React Imports
+import React from "react";
 
+// ** Components Imports
 import ProductCard from "../product-card";
 
+// ** Styles Imports
 import {
-  CategoryPreviewContainer,
   Title,
   Preview,
+  CategoryPreviewContainer,
 } from "./styles";
 
 const CategoryPreview = ({ title, products }) => {
