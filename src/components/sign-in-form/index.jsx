@@ -6,9 +6,9 @@ import {
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 
-import FormInput from "../form-input/form-input.component";
-import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
-import { ButtonsContainer, SignInContainer } from "./sign-in-form.styles";
+import FormInput from "../form-input";
+import Button, { BUTTON_TYPE_CLASSES } from "../button";
+import { ButtonsContainer, SignInContainer } from "./styles";
 
 const defaultFormFields = {
   email: "",

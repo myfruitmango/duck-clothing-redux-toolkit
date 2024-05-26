@@ -6,8 +6,8 @@ import { selectIsCartOpen } from "../../store/cart/cart.selector";
 import { selectCurrentUser } from "../../store/user/user.selector";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
-import CartIcon from "../../components/cart-icon/cart-icon.componet";
-import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
+import CartIcon from "../../components/cart-icon/cart-icon.componet.jsx";
+import CartDropdown from "../../components/cart-dropdown/styles.jsx";
 
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
 import {
@@ -15,7 +15,7 @@ import {
   NavLinks,
   NavLink,
   LogoContainer,
-} from "./navigation.styles.jsx";
+} from "./styles.jsx";
 
 const Navigation = () => {
   // const currentUser = useSelector((state) => state.user.currentUser);

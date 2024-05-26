@@ -5,8 +5,8 @@ import { useDispatch } from "react-redux";
 import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
 import { setCategories } from "../../store/categories/category.reducer";
 
-import CategoriesPreview from "../categories-preview/categories-preview.component";
-import Category from "../category/category.component";
+import CategoriesPreview from "../categories-preview";
+import Category from "../category";
 
 import "./shop.styles.scss";
 

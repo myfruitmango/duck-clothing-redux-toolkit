@@ -4,7 +4,7 @@ import {
   BackgroundImage,
   Body,
   DirectoryItemContainer,
-} from "./directory-item.styles";
+} from "./styles";
 
 const DirectoryItem = ({ category }) => {
   const { imageUrl, title, route } = category;
